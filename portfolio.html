@@ -4,6 +4,7 @@
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Aldrich|Frank+Ruhl+Libre|Playfair+Display+SC" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <script
       src="https://code.jquery.com/jquery-3.2.1.min.js"
       integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -62,8 +63,9 @@
         }
         #about, #portfolio, #contact {
             background-color:rgba(255,255,255,.3);
+            height:50vh;
         }
-        .navbar-fixed-top {
+        .fixed {
             top: 0;
             z-index: 100;
             position: fixed;
@@ -87,21 +89,20 @@
     <script>
      document.ready(function() {
   
-      window.scroll(function () {
-          console.log($(window).scrollTop())
-        if (window).scrollTop() > 280) {
-          ('#navbar').addClass('navbar-fixed-top');
-        }
-        if (window).scrollTop() < 281) {
-          ('#navbar').removeClass('navbar-fixed-top');
-        }
-      });
-    });
+      $(function () {
+        navTop = ("nav").position().top;
+        $(window).scroll(function() {
+            if $(window).scrollTop() > navTop; 
+                $("#navbar").addClass("fixed");
+            else
+                $("#navbar").removeClass("fixed");
+            });
+        });
     </script>
     <img class="absolute" id="bgimg" src="https://static.pexels.com/photos/9754/mountains-clouds-forest-fog.jpg"></img>
     <h1>Michael DAntuono</h1>
     <em><h2 class="fadeOutIn">Developer</h2></em><br>
-    <div class="container">
+    <div id=navbar class="container">
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -175,7 +176,7 @@
                 <input type="text" placeholder="Name"></input>
                 <input type="text" placeholder="Email"></input>
                 <br>
-                <input type="text" placeholder="Message" size=35></input>
+                <textarea type="text" placeholder="Message"></textarea><br>
                 <button type="submit" class="btn btn-success">Send</button>
             </form>
         </section>
@@ -184,7 +185,7 @@
     <div class="container">
         <footer>
             <p style="color:grey">Thank you for viewing my page!</p>
-            
+            <i style="color:grey" class="fa fa-microchip fa-3x" aria-hidden="true"></i>
             <p style="color:grey">For more information, fill out the contact section above!</p>
         </footer>
     </div>
