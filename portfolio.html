@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Aldrich|Frank+Ruhl+Libre|Playfair+Display+SC" rel="stylesheet">
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Portfolio Page</title>
+    <style>
+        .absolute {
+            position:fixed;
+            top:0;
+            left:0;
+        }
+        body {
+            text-align:center;
+        }
+        nav {
+            overflow:hidden;
+        }
+        .sticky {
+            position:fixed;
+            top:0;
+            width:100%;
+        }
+        h1 {
+            font-family: 'Playfair Display SC', serif;
+            color: black;
+            font-size:56px
+        }
+        h2 {
+            font-family: 'Aldrich', sans-serif;
+            font-size:38px;
+            color:black;
+        }
+        h3 {
+            font-family: 'Playfair Display SC', serif;
+            font-size:34px;
+            color:black;
+        }
+        p {
+            font-family: 'Frank Ruhl Libre', serif;
+            font-size:20px;
+            color:black;
+        }
+        #bgimg {
+            width: 100vw;
+	        z-index: -1;
+            position:fixed;
+            min-height:100%;
+            min-width:100%;
+        }
+        footer {
+            background-color:rgba(0,0,0,.6);
+        }
+        #about, #portfolio, #contact {
+            background-color:rgba(255,255,255,.3);
+        }
+        .navbar-fixed-top {
+            top: 0;
+            z-index: 100;
+            position: fixed;
+            width: 100%;
+        }
+        @keyframes fadeOutIn {
+          0% {opacity: 1;}
+          50% {opacity: 0;}
+          100% {opacity: 1;}
+        }
+        
+        .fadeOutIn {
+          animation-name: fadeOutIn;
+          animation-duration: 2s;
+         }
+    </style>
+    
+</head>
+
+<body>
+    <script>
+     document.ready(function() {
+  
+      window.scroll(function () {
+          console.log($(window).scrollTop())
+        if (window).scrollTop() > 280) {
+          ('#navbar').addClass('navbar-fixed-top');
+        }
+        if (window).scrollTop() < 281) {
+          ('#navbar').removeClass('navbar-fixed-top');
+        }
+      });
+    });
+    </script>
+    <img class="absolute" id="bgimg" src="https://static.pexels.com/photos/9754/mountains-clouds-forest-fog.jpg"></img>
+    <h1>Michael DAntuono</h1>
+    <em><h2 class="fadeOutIn">Developer</h2></em><br>
+    <div class="container">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="true">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                      </button>
+                    <a class="navbar-brand" href="portfolio.html">
+                        <img src="https://cdn3.iconfinder.com/data/icons/streamline-icon-set-free-pack/48/Streamline-18-512.png" width= 30px ></img>
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse" id="navbar-collapse" aria-expanded="true">
+                    <ul class="nav navbar-nav mr-auto">
+                        <li class="nav-item active"><a href="portfolio.html#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="portfolio.html#portfolio">Portfolio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="portfolio.html#contact">Contact</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="https://www.facebook.com/mikeishere3"><img width=30px src="https://cdn0.iconfinder.com/data/icons/social-flat-rounded-rects/512/facebook-256.png"></img></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/Mike_DAntuono"><img width=30px src="http://icons.iconarchive.com/icons/uiconstock/socialmedia/512/Twitter-icon.png"></img></a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/mike_dantuono/?hl=en"><img width=30px src="https://instagram-brand.com/wp-content/uploads/2016/11/app-icon2.png"></img></a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/michael-dantuono-a428b1134/"><img width=30px src="https://cdn1.iconfinder.com/data/icons/logotypes/32/square-linkedin-512.png"></img></a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/mdantuono"><img width=30px src="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png"></img></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="container">
+        <section id="about">
+            <h3>-About Me-</h3>
+            <p>My name is Michael DAntuono.</p>
+            <p>I have a background in Audio Engineering and hold an Associates Degree in Entertainment Management from Bay State College.</p>
+            <p>I am a future developer who has recently been learning HTML with CSS and Boostrap, Javascript, and more. Paving the SiliconRhode with code!</p>
+        </section>
+    </div>
+    <div class="container">
+        <section id="portfolio">
+            <h3>-Portfolio-</h3>
+            <p>Here's a simple tribute page website I made.</p>
+            <div class="row">
+                <div class="col-sm-4">
+                    <img width=100% src="coffee.png"></img>
+                </div>
+                <div class="col-sm-4">
+                    <img width=100% src="map.png"></img>
+                </div>
+                <div class="col-sm-4">
+                    <img width=100% src="vote.png"></img>
+                </div>
+            </div>
+            <p>To view my tribute page click <a href="tributePage/tribute-2.html" target="_blank">HERE</a>.</p>
+        </section>
+    </div>
+    <div class="container">
+        <section id="contact">
+            <h3>-Contact Me-</h3>
+            <form action="mailto:mikeishere3@intracitygeeks.org" method="post" enctype="text/plain">
+                <input type="text" placeholder="Name"></input>
+                <input type="text" placeholder="Email"></input>
+                <br>
+                <input type="text" placeholder="Message" size=35></input>
+                <button type="submit" class="btn btn-success">Send</button>
+            </form>
+        </section>
+    </div>
+    <br>
+    <div class="container">
+        <footer>
+            <p style="color:grey">Thank you for viewing my page!</p>
+            <span style="color:white; text-align:center" class="glyphicons glyphicons-sunglasses"></span>
+            <p style="color:grey">For more information, fill out the contact section above.</p>
+        </footer>
+    </div>
+</body>
+
+</html>
