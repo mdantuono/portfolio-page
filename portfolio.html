@@ -8,7 +8,7 @@
     <script
       src="https://code.jquery.com/jquery-3.2.1.min.js"
       integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-      crossorigin="anonymous"></script>   
+      crossorigin="anonymous"></script> 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -65,7 +65,7 @@
             background-color:rgba(255,255,255,.3);
             height:50vh;
         }
-        .fixed {
+        .sticky {
             top: 0;
             z-index: 100;
             position: fixed;
@@ -86,24 +86,28 @@
 </head>
 
 <body>
+    
     <script>
-     document.ready(function() {
-  
-      $(function () {
-        navTop = ("nav").position().top;
-        $(window).scroll(function() {
-            if $(window).scrollTop() > navTop; 
-                $("#navbar").addClass("fixed");
-            else
-                $("#navbar").removeClass("fixed");
-            });
+    $(document).ready(function() {
+    var position = $('#nav_bar').position();
+    console.log(position.top);
+        $(window).scroll(function(){
+            if($(window).scrollTop() > position.top) {
+                $('#nav_bar').addClass('navbar-fixed-top');
+            }
+            if ($(window).scrollTop() <= position.top) {
+                $('#nav_bar').removeClass('navbar-fixed-top');
+            }
         });
+    });
+
     </script>
+    
     <img class="absolute" id="bgimg" src="https://static.pexels.com/photos/9754/mountains-clouds-forest-fog.jpg"></img>
     <h1>Michael DAntuono</h1>
     <em><h2 class="fadeOutIn">Developer</h2></em><br>
-    <div id=navbar class="container">
-        <nav class="navbar navbar-inverse">
+    <div id="nav_bar" class="container">
+        <nav  class="navbar navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header">
                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="true">
@@ -113,14 +117,14 @@
                         <span class="icon-bar"></span>
                       </button>
                     <a class="navbar-brand" href="portfolio.html">
-                        <img src="https://cdn3.iconfinder.com/data/icons/streamline-icon-set-free-pack/48/Streamline-18-512.png" width= 30px ></img>
+                        <i class="fa fa-home fa-2x" aria-hidden="true"></i>
                     </a>
                 </div>
                 <div class="navbar-collapse collapse" id="navbar-collapse" aria-expanded="true">
                     <ul class="nav navbar-nav mr-auto">
-                        <li class="nav-item active"><a href="portfolio.html#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="portfolio.html#portfolio">Portfolio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="portfolio.html#contact">Contact</a></li>
+                        <li id="about_" class="nav-item active"><a href="portfolio.html#about">About</a></li>
+                        <li id="portfolio_" class="nav-item"><a class="nav-link" href="portfolio.html#portfolio">Portfolio</a></li>
+                        <li id="contact_" class="nav-item"><a class="nav-link" href="portfolio.html#contact">Contact</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li>
